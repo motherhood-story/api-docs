@@ -1,0 +1,5116 @@
+openapi: 3.0.1
+info:
+  title: Mom Story Api API
+  description: Mom Story Api API documentation
+  termsOfService: ''
+  contact:
+    name: 'Annelik Hikayes'
+    url: annelikhikayesi.com
+    email: developer@annelikhikayesi.com
+  license:
+    name: unlicensed
+    url: ''
+  version: 0.0.1
+servers:
+  - url: https://mom-story.herokuapp.com
+    description: Generated server url
+paths:
+  /api/user-pregnancies/{id}:
+    put:
+      tags:
+        - user-pregnancy-resource
+      operationId: updateUserPregnancy
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UserPregnancyDTO'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/UserPregnancyDTO'
+  /api/user-entities/{id}:
+    get:
+      tags:
+        - user-entity-resource
+      operationId: getUserEntity
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/UserEntityDTO'
+    put:
+      tags:
+        - user-entity-resource
+      operationId: updateUserEntity
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UserEntityDTO'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/UserEntityDTO'
+    delete:
+      tags:
+        - user-entity-resource
+      operationId: deleteUserEntity
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: OK
+    patch:
+      tags:
+        - user-entity-resource
+      operationId: partialUpdateUserEntity
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UserEntityDTO'
+          application/merge-patch+json:
+            schema:
+              $ref: '#/components/schemas/UserEntityDTO'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/UserEntityDTO'
+  /api/survey-questions/{id}:
+    get:
+      tags:
+        - survey-question-resource
+      operationId: getSurveyQuestion
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/SurveyQuestionDTO'
+    put:
+      tags:
+        - survey-question-resource
+      operationId: updateSurveyQuestion
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SurveyQuestionDTO'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/SurveyQuestionDTO'
+    delete:
+      tags:
+        - survey-question-resource
+      operationId: deleteSurveyQuestion
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: OK
+    patch:
+      tags:
+        - survey-question-resource
+      operationId: partialUpdateSurveyQuestion
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SurveyQuestionDTO'
+          application/merge-patch+json:
+            schema:
+              $ref: '#/components/schemas/SurveyQuestionDTO'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/SurveyQuestionDTO'
+  /api/survey-definitions/{id}:
+    get:
+      tags:
+        - survey-definition-resource
+      operationId: getSurveyDefinition
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/SurveyDefinitionDTO'
+    put:
+      tags:
+        - survey-definition-resource
+      operationId: updateSurveyDefinition
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SurveyDefinitionDTO'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/SurveyDefinitionDTO'
+    delete:
+      tags:
+        - survey-definition-resource
+      operationId: deleteSurveyDefinition
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: OK
+    patch:
+      tags:
+        - survey-definition-resource
+      operationId: partialUpdateSurveyDefinition
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SurveyDefinitionDTO'
+          application/merge-patch+json:
+            schema:
+              $ref: '#/components/schemas/SurveyDefinitionDTO'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/SurveyDefinitionDTO'
+  /api/survey-answers/{id}:
+    get:
+      tags:
+        - survey-answer-resource
+      operationId: getSurveyAnswer
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/SurveyAnswerDTO'
+    put:
+      tags:
+        - survey-answer-resource
+      operationId: updateSurveyAnswer
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SurveyAnswerDTO'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/SurveyAnswerDTO'
+    delete:
+      tags:
+        - survey-answer-resource
+      operationId: deleteSurveyAnswer
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: OK
+    patch:
+      tags:
+        - survey-answer-resource
+      operationId: partialUpdateSurveyAnswer
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SurveyAnswerDTO'
+          application/merge-patch+json:
+            schema:
+              $ref: '#/components/schemas/SurveyAnswerDTO'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/SurveyAnswerDTO'
+  /api/shopping-lists/{id}:
+    get:
+      tags:
+        - shopping-list-resource
+      operationId: getShoppingList
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/ShoppingListDTO'
+    put:
+      tags:
+        - shopping-list-resource
+      operationId: updateShoppingList
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ShoppingListDTO'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/ShoppingListDTO'
+    patch:
+      tags:
+        - shopping-list-resource
+      operationId: partialUpdateShoppingList
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ShoppingListDTO'
+          application/merge-patch+json:
+            schema:
+              $ref: '#/components/schemas/ShoppingListDTO'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/ShoppingListDTO'
+  /api/shopping-definitions/{id}:
+    get:
+      tags:
+        - shopping-definition-resource
+      operationId: getShoppingDefinition
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/ShoppingDefinitionDTO'
+    put:
+      tags:
+        - shopping-definition-resource
+      operationId: updateShoppingDefinition
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ShoppingDefinitionDTO'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/ShoppingDefinitionDTO'
+    delete:
+      tags:
+        - shopping-definition-resource
+      operationId: deleteShoppingDefinition
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: OK
+    patch:
+      tags:
+        - shopping-definition-resource
+      operationId: partialUpdateShoppingDefinition
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ShoppingDefinitionDTO'
+          application/merge-patch+json:
+            schema:
+              $ref: '#/components/schemas/ShoppingDefinitionDTO'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/ShoppingDefinitionDTO'
+  /api/shopping-categories/{id}:
+    get:
+      tags:
+        - shopping-category-resource
+      operationId: getShoppingCategory
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/ShoppingCategoryDTO'
+    put:
+      tags:
+        - shopping-category-resource
+      operationId: updateShoppingCategory
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ShoppingCategoryDTO'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/ShoppingCategoryDTO'
+    delete:
+      tags:
+        - shopping-category-resource
+      operationId: deleteShoppingCategory
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: OK
+    patch:
+      tags:
+        - shopping-category-resource
+      operationId: partialUpdateShoppingCategory
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ShoppingCategoryDTO'
+          application/merge-patch+json:
+            schema:
+              $ref: '#/components/schemas/ShoppingCategoryDTO'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/ShoppingCategoryDTO'
+  /api/profile-photos/{id}:
+    get:
+      tags:
+        - profile-photo-resource
+      operationId: getProfilePhoto
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/ProfilePhotoDTO'
+    put:
+      tags:
+        - profile-photo-resource
+      operationId: updateProfilePhoto
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ProfilePhotoDTO'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/ProfilePhotoDTO'
+    delete:
+      tags:
+        - profile-photo-resource
+      operationId: deleteProfilePhoto
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: OK
+    patch:
+      tags:
+        - profile-photo-resource
+      operationId: partialUpdateProfilePhoto
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ProfilePhotoDTO'
+          application/merge-patch+json:
+            schema:
+              $ref: '#/components/schemas/ProfilePhotoDTO'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/ProfilePhotoDTO'
+  /api/privacy-policies/{id}:
+    get:
+      tags:
+        - privacy-policy-resource
+      operationId: getPrivacyPolicy
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/PrivacyPolicyDTO'
+    put:
+      tags:
+        - privacy-policy-resource
+      operationId: updatePrivacyPolicy
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PrivacyPolicyDTO'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/PrivacyPolicyDTO'
+    delete:
+      tags:
+        - privacy-policy-resource
+      operationId: deletePrivacyPolicy
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: OK
+    patch:
+      tags:
+        - privacy-policy-resource
+      operationId: partialUpdatePrivacyPolicy
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PrivacyPolicyDTO'
+          application/merge-patch+json:
+            schema:
+              $ref: '#/components/schemas/PrivacyPolicyDTO'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/PrivacyPolicyDTO'
+  /api/post-favorites/{id}:
+    get:
+      tags:
+        - post-favorite-resource
+      operationId: getPostFavorite
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/PostFavoriteDTO'
+    put:
+      tags:
+        - post-favorite-resource
+      operationId: updatePostFavorite
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostFavoriteDTO'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/PostFavoriteDTO'
+    delete:
+      tags:
+        - post-favorite-resource
+      operationId: deletePostFavorite
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: OK
+    patch:
+      tags:
+        - post-favorite-resource
+      operationId: partialUpdatePostFavorite
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostFavoriteDTO'
+          application/merge-patch+json:
+            schema:
+              $ref: '#/components/schemas/PostFavoriteDTO'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/PostFavoriteDTO'
+  /api/post-contents/{id}:
+    get:
+      tags:
+        - post-content-resource
+      operationId: getPostContent
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/PostContentDTO'
+    put:
+      tags:
+        - post-content-resource
+      operationId: updatePostContent
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostContentDTO'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/PostContentDTO'
+    delete:
+      tags:
+        - post-content-resource
+      operationId: deletePostContent
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: OK
+    patch:
+      tags:
+        - post-content-resource
+      operationId: partialUpdatePostContent
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostContentDTO'
+          application/merge-patch+json:
+            schema:
+              $ref: '#/components/schemas/PostContentDTO'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/PostContentDTO'
+  /api/post-categories/{id}:
+    get:
+      tags:
+        - post-category-resource
+      operationId: getPostCategory
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/PostCategoryDTO'
+    put:
+      tags:
+        - post-category-resource
+      operationId: updatePostCategory
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostCategoryDTO'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/PostCategoryDTO'
+    delete:
+      tags:
+        - post-category-resource
+      operationId: deletePostCategory
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: OK
+    patch:
+      tags:
+        - post-category-resource
+      operationId: partialUpdatePostCategory
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostCategoryDTO'
+          application/merge-patch+json:
+            schema:
+              $ref: '#/components/schemas/PostCategoryDTO'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/PostCategoryDTO'
+  /api/languages/{id}:
+    get:
+      tags:
+        - language-resource
+      operationId: getLanguage
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/LanguageDTO'
+    put:
+      tags:
+        - language-resource
+      operationId: updateLanguage
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LanguageDTO'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/LanguageDTO'
+    delete:
+      tags:
+        - language-resource
+      operationId: deleteLanguage
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: OK
+    patch:
+      tags:
+        - language-resource
+      operationId: partialUpdateLanguage
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LanguageDTO'
+          application/merge-patch+json:
+            schema:
+              $ref: '#/components/schemas/LanguageDTO'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/LanguageDTO'
+  /api/kvkks/{id}:
+    get:
+      tags:
+        - kvkk-resource
+      operationId: getKvkk
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/KvkkDTO'
+    put:
+      tags:
+        - kvkk-resource
+      operationId: updateKvkk
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/KvkkDTO'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/KvkkDTO'
+    delete:
+      tags:
+        - kvkk-resource
+      operationId: deleteKvkk
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: OK
+    patch:
+      tags:
+        - kvkk-resource
+      operationId: partialUpdateKvkk
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/KvkkDTO'
+          application/merge-patch+json:
+            schema:
+              $ref: '#/components/schemas/KvkkDTO'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/KvkkDTO'
+  /api/genders/{id}:
+    get:
+      tags:
+        - gender-resource
+      operationId: getGender
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/GenderDTO'
+    put:
+      tags:
+        - gender-resource
+      operationId: updateGender
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GenderDTO'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/GenderDTO'
+    delete:
+      tags:
+        - gender-resource
+      operationId: deleteGender
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: OK
+    patch:
+      tags:
+        - gender-resource
+      operationId: partialUpdateGender
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GenderDTO'
+          application/merge-patch+json:
+            schema:
+              $ref: '#/components/schemas/GenderDTO'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/GenderDTO'
+  /api/forums/{id}:
+    get:
+      tags:
+        - forum-resource
+      operationId: getForum
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/PostDTO'
+    put:
+      tags:
+        - forum-resource
+      operationId: updatePost
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ForumDTO'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/PostDTO'
+    delete:
+      tags:
+        - forum-resource
+      operationId: deletePost
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: OK
+  /api/countries/{id}:
+    get:
+      tags:
+        - country-resource
+      operationId: getCountry
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/CountryDTO'
+    put:
+      tags:
+        - country-resource
+      operationId: updateCountry
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CountryDTO'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/CountryDTO'
+    delete:
+      tags:
+        - country-resource
+      operationId: deleteCountry
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: OK
+    patch:
+      tags:
+        - country-resource
+      operationId: partialUpdateCountry
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CountryDTO'
+          application/merge-patch+json:
+            schema:
+              $ref: '#/components/schemas/CountryDTO'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/CountryDTO'
+  /api/comments/{id}/posts/{postId}/{postType}:
+    put:
+      tags:
+        - comment-resource
+      operationId: updatePostComment
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+        - name: postId
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+        - name: postType
+          in: path
+          required: true
+          schema:
+            type: string
+            enum:
+              - BLOG
+              - FORUM
+              - COMMENT
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CommentDTO'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/PostDTO'
+  /api/baby-names/{id}:
+    get:
+      tags:
+        - baby-name-resource
+      operationId: getBabyName
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/BabyNameDTO'
+    put:
+      tags:
+        - baby-name-resource
+      operationId: updateBabyName
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BabyNameDTO'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/BabyNameDTO'
+    delete:
+      tags:
+        - baby-name-resource
+      operationId: deleteBabyName
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: OK
+    patch:
+      tags:
+        - baby-name-resource
+      operationId: partialUpdateBabyName
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BabyNameDTO'
+          application/merge-patch+json:
+            schema:
+              $ref: '#/components/schemas/BabyNameDTO'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/BabyNameDTO'
+  /api/admin/users:
+    get:
+      tags:
+        - user-resource
+      operationId: getAllUsers
+      parameters:
+        - name: page
+          in: query
+          description: Zero-based page index (0..N)
+          required: false
+          schema:
+            minimum: 0
+            type: integer
+            default: 0
+        - name: size
+          in: query
+          description: The size of the page to be returned
+          required: false
+          schema:
+            minimum: 1
+            type: integer
+            default: 20
+        - name: sort
+          in: query
+          description: 'Sorting criteria in the format: property,(asc|desc). Default sort order is ascending. Multiple sort criteria are supported.'
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/AdminUserDTO'
+    put:
+      tags:
+        - user-resource
+      operationId: updateUser
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AdminUserDTO'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/AdminUserDTO'
+    post:
+      tags:
+        - user-resource
+      operationId: createUser
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AdminUserDTO'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/User'
+  /api/user-privacy-policy-approves/privacy-policies/{id}:
+    post:
+      tags:
+        - user-privacy-policy-approve-resource
+      operationId: createUserPrivacyPolicyApprove
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/UserPrivacyPolicyApproveDTO'
+  /api/user-pregnancy-task-histories:
+    post:
+      tags:
+        - user-pregnancy-task-history-resource
+      operationId: createUserPregnancyTaskHistory
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UserPregnancyTaskHistoryDTO'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/UserPregnancyTaskHistoryDTO'
+  /api/user-pregnancies:
+    post:
+      tags:
+        - user-pregnancy-resource
+      operationId: createUserPregnancy
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UserPregnancyDTO'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/UserPregnancyDTO'
+  /api/user-kvkk-approves/kvkks/{kvkkId}:
+    post:
+      tags:
+        - user-kvkk-approve-resource
+      operationId: createUserKvkkApprove
+      parameters:
+        - name: kvkkId
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/UserKvkkApproveDTO'
+  /api/user-entities:
+    get:
+      tags:
+        - user-entity-resource
+      operationId: getAllUserEntities
+      parameters:
+        - name: page
+          in: query
+          description: Zero-based page index (0..N)
+          required: false
+          schema:
+            minimum: 0
+            type: integer
+            default: 0
+        - name: size
+          in: query
+          description: The size of the page to be returned
+          required: false
+          schema:
+            minimum: 1
+            type: integer
+            default: 20
+        - name: sort
+          in: query
+          description: 'Sorting criteria in the format: property,(asc|desc). Default sort order is ascending. Multiple sort criteria are supported.'
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+        - name: eagerload
+          in: query
+          required: false
+          schema:
+            type: boolean
+            default: false
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/UserEntityDTO'
+    post:
+      tags:
+        - user-entity-resource
+      operationId: createUserEntity
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UserEntityDTO'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/UserEntityDTO'
+  /api/survey-questions:
+    get:
+      tags:
+        - survey-question-resource
+      operationId: getAllSurveyQuestions
+      parameters:
+        - name: page
+          in: query
+          description: Zero-based page index (0..N)
+          required: false
+          schema:
+            minimum: 0
+            type: integer
+            default: 0
+        - name: size
+          in: query
+          description: The size of the page to be returned
+          required: false
+          schema:
+            minimum: 1
+            type: integer
+            default: 20
+        - name: sort
+          in: query
+          description: 'Sorting criteria in the format: property,(asc|desc). Default sort order is ascending. Multiple sort criteria are supported.'
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+        - name: eagerload
+          in: query
+          required: false
+          schema:
+            type: boolean
+            default: false
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/SurveyQuestionDTO'
+    post:
+      tags:
+        - survey-question-resource
+      operationId: createSurveyQuestion
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SurveyQuestionDTO'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/SurveyQuestionDTO'
+  /api/survey-definitions:
+    get:
+      tags:
+        - survey-definition-resource
+      operationId: getAllSurveyDefinitions
+      parameters:
+        - name: page
+          in: query
+          description: Zero-based page index (0..N)
+          required: false
+          schema:
+            minimum: 0
+            type: integer
+            default: 0
+        - name: size
+          in: query
+          description: The size of the page to be returned
+          required: false
+          schema:
+            minimum: 1
+            type: integer
+            default: 20
+        - name: sort
+          in: query
+          description: 'Sorting criteria in the format: property,(asc|desc). Default sort order is ascending. Multiple sort criteria are supported.'
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/SurveyDefinitionDTO'
+    post:
+      tags:
+        - survey-definition-resource
+      operationId: createSurveyDefinition
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SurveyDefinitionDTO'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/SurveyDefinitionDTO'
+  /api/survey-answers:
+    get:
+      tags:
+        - survey-answer-resource
+      operationId: getAllSurveyAnswers
+      parameters:
+        - name: page
+          in: query
+          description: Zero-based page index (0..N)
+          required: false
+          schema:
+            minimum: 0
+            type: integer
+            default: 0
+        - name: size
+          in: query
+          description: The size of the page to be returned
+          required: false
+          schema:
+            minimum: 1
+            type: integer
+            default: 20
+        - name: sort
+          in: query
+          description: 'Sorting criteria in the format: property,(asc|desc). Default sort order is ascending. Multiple sort criteria are supported.'
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+        - name: eagerload
+          in: query
+          required: false
+          schema:
+            type: boolean
+            default: false
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/SurveyAnswerDTO'
+    post:
+      tags:
+        - survey-answer-resource
+      operationId: createSurveyAnswer
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SurveyAnswerDTO'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/SurveyAnswerDTO'
+  /api/shopping-lists:
+    get:
+      tags:
+        - shopping-list-resource
+      operationId: getAllShoppingLists
+      parameters:
+        - name: page
+          in: query
+          description: Zero-based page index (0..N)
+          required: false
+          schema:
+            minimum: 0
+            type: integer
+            default: 0
+        - name: size
+          in: query
+          description: The size of the page to be returned
+          required: false
+          schema:
+            minimum: 1
+            type: integer
+            default: 20
+        - name: sort
+          in: query
+          description: 'Sorting criteria in the format: property,(asc|desc). Default sort order is ascending. Multiple sort criteria are supported.'
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+        - name: eagerload
+          in: query
+          required: false
+          schema:
+            type: boolean
+            default: false
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ShoppingListDTO'
+    post:
+      tags:
+        - shopping-list-resource
+      operationId: createShoppingList
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ShoppingListDTO'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/ShoppingListDTO'
+  /api/shopping-definitions:
+    get:
+      tags:
+        - shopping-definition-resource
+      operationId: getAllShoppingDefinitions
+      parameters:
+        - name: page
+          in: query
+          description: Zero-based page index (0..N)
+          required: false
+          schema:
+            minimum: 0
+            type: integer
+            default: 0
+        - name: size
+          in: query
+          description: The size of the page to be returned
+          required: false
+          schema:
+            minimum: 1
+            type: integer
+            default: 20
+        - name: sort
+          in: query
+          description: 'Sorting criteria in the format: property,(asc|desc). Default sort order is ascending. Multiple sort criteria are supported.'
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+        - name: eagerload
+          in: query
+          required: false
+          schema:
+            type: boolean
+            default: false
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ShoppingDefinitionDTO'
+    post:
+      tags:
+        - shopping-definition-resource
+      operationId: createShoppingDefinition
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ShoppingDefinitionDTO'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/ShoppingDefinitionDTO'
+  /api/shopping-categories:
+    get:
+      tags:
+        - shopping-category-resource
+      operationId: getAllShoppingCategories
+      parameters:
+        - name: page
+          in: query
+          description: Zero-based page index (0..N)
+          required: false
+          schema:
+            minimum: 0
+            type: integer
+            default: 0
+        - name: size
+          in: query
+          description: The size of the page to be returned
+          required: false
+          schema:
+            minimum: 1
+            type: integer
+            default: 20
+        - name: sort
+          in: query
+          description: 'Sorting criteria in the format: property,(asc|desc). Default sort order is ascending. Multiple sort criteria are supported.'
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+        - name: eagerload
+          in: query
+          required: false
+          schema:
+            type: boolean
+            default: false
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ShoppingCategoryDTO'
+    post:
+      tags:
+        - shopping-category-resource
+      operationId: createShoppingCategory
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ShoppingCategoryDTO'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/ShoppingCategoryDTO'
+  /api/register:
+    post:
+      tags:
+        - account-resource
+      operationId: registerAccount
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ManagedUserVM'
+        required: true
+      responses:
+        '201':
+          description: Created
+  /api/profile-photos:
+    get:
+      tags:
+        - profile-photo-resource
+      operationId: getAllProfilePhotos
+      parameters:
+        - name: page
+          in: query
+          description: Zero-based page index (0..N)
+          required: false
+          schema:
+            minimum: 0
+            type: integer
+            default: 0
+        - name: size
+          in: query
+          description: The size of the page to be returned
+          required: false
+          schema:
+            minimum: 1
+            type: integer
+            default: 20
+        - name: sort
+          in: query
+          description: 'Sorting criteria in the format: property,(asc|desc). Default sort order is ascending. Multiple sort criteria are supported.'
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ProfilePhotoDTO'
+    post:
+      tags:
+        - profile-photo-resource
+      operationId: createProfilePhoto
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ProfilePhotoDTO'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/ProfilePhotoDTO'
+  /api/privacy-policies:
+    get:
+      tags:
+        - privacy-policy-resource
+      operationId: getAllPrivacyPolicies
+      parameters:
+        - name: page
+          in: query
+          description: Zero-based page index (0..N)
+          required: false
+          schema:
+            minimum: 0
+            type: integer
+            default: 0
+        - name: size
+          in: query
+          description: The size of the page to be returned
+          required: false
+          schema:
+            minimum: 1
+            type: integer
+            default: 20
+        - name: sort
+          in: query
+          description: 'Sorting criteria in the format: property,(asc|desc). Default sort order is ascending. Multiple sort criteria are supported.'
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/PrivacyPolicyDTO'
+    post:
+      tags:
+        - privacy-policy-resource
+      operationId: createPrivacyPolicy
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PrivacyPolicyDTO'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/PrivacyPolicyDTO'
+  /api/post-favorites:
+    get:
+      tags:
+        - post-favorite-resource
+      operationId: getAllPostFavorites
+      parameters:
+        - name: page
+          in: query
+          description: Zero-based page index (0..N)
+          required: false
+          schema:
+            minimum: 0
+            type: integer
+            default: 0
+        - name: size
+          in: query
+          description: The size of the page to be returned
+          required: false
+          schema:
+            minimum: 1
+            type: integer
+            default: 20
+        - name: sort
+          in: query
+          description: 'Sorting criteria in the format: property,(asc|desc). Default sort order is ascending. Multiple sort criteria are supported.'
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+        - name: eagerload
+          in: query
+          required: false
+          schema:
+            type: boolean
+            default: false
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/PostFavoriteDTO'
+    post:
+      tags:
+        - post-favorite-resource
+      operationId: createPostFavorite
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostFavoriteDTO'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/PostFavoriteDTO'
+  /api/post-contents:
+    get:
+      tags:
+        - post-content-resource
+      operationId: getAllPostContents
+      parameters:
+        - name: page
+          in: query
+          description: Zero-based page index (0..N)
+          required: false
+          schema:
+            minimum: 0
+            type: integer
+            default: 0
+        - name: size
+          in: query
+          description: The size of the page to be returned
+          required: false
+          schema:
+            minimum: 1
+            type: integer
+            default: 20
+        - name: sort
+          in: query
+          description: 'Sorting criteria in the format: property,(asc|desc). Default sort order is ascending. Multiple sort criteria are supported.'
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+        - name: eagerload
+          in: query
+          required: false
+          schema:
+            type: boolean
+            default: false
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/PostContentDTO'
+    post:
+      tags:
+        - post-content-resource
+      operationId: createPostContent
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostContentDTO'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/PostContentDTO'
+  /api/post-categories:
+    get:
+      tags:
+        - post-category-resource
+      operationId: getAllPostCategories
+      parameters:
+        - name: page
+          in: query
+          description: Zero-based page index (0..N)
+          required: false
+          schema:
+            minimum: 0
+            type: integer
+            default: 0
+        - name: size
+          in: query
+          description: The size of the page to be returned
+          required: false
+          schema:
+            minimum: 1
+            type: integer
+            default: 20
+        - name: sort
+          in: query
+          description: 'Sorting criteria in the format: property,(asc|desc). Default sort order is ascending. Multiple sort criteria are supported.'
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+        - name: eagerload
+          in: query
+          required: false
+          schema:
+            type: boolean
+            default: false
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/PostCategoryDTO'
+    post:
+      tags:
+        - post-category-resource
+      operationId: createPostCategory
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostCategoryDTO'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/PostCategoryDTO'
+  /api/languages:
+    get:
+      tags:
+        - language-resource
+      operationId: getAllLanguages
+      parameters:
+        - name: page
+          in: query
+          description: Zero-based page index (0..N)
+          required: false
+          schema:
+            minimum: 0
+            type: integer
+            default: 0
+        - name: size
+          in: query
+          description: The size of the page to be returned
+          required: false
+          schema:
+            minimum: 1
+            type: integer
+            default: 20
+        - name: sort
+          in: query
+          description: 'Sorting criteria in the format: property,(asc|desc). Default sort order is ascending. Multiple sort criteria are supported.'
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/LanguageDTO'
+    post:
+      tags:
+        - language-resource
+      operationId: createLanguage
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LanguageDTO'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/LanguageDTO'
+  /api/kvkks:
+    get:
+      tags:
+        - kvkk-resource
+      operationId: getAllKvkks
+      parameters:
+        - name: page
+          in: query
+          description: Zero-based page index (0..N)
+          required: false
+          schema:
+            minimum: 0
+            type: integer
+            default: 0
+        - name: size
+          in: query
+          description: The size of the page to be returned
+          required: false
+          schema:
+            minimum: 1
+            type: integer
+            default: 20
+        - name: sort
+          in: query
+          description: 'Sorting criteria in the format: property,(asc|desc). Default sort order is ascending. Multiple sort criteria are supported.'
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/KvkkDTO'
+    post:
+      tags:
+        - kvkk-resource
+      operationId: createKvkk
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/KvkkDTO'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/KvkkDTO'
+  /api/genders:
+    get:
+      tags:
+        - gender-resource
+      operationId: getAllGenders
+      parameters:
+        - name: page
+          in: query
+          description: Zero-based page index (0..N)
+          required: false
+          schema:
+            minimum: 0
+            type: integer
+            default: 0
+        - name: size
+          in: query
+          description: The size of the page to be returned
+          required: false
+          schema:
+            minimum: 1
+            type: integer
+            default: 20
+        - name: sort
+          in: query
+          description: 'Sorting criteria in the format: property,(asc|desc). Default sort order is ascending. Multiple sort criteria are supported.'
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GenderDTO'
+    post:
+      tags:
+        - gender-resource
+      operationId: createGender
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GenderDTO'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/GenderDTO'
+  /api/gender-langs:
+    get:
+      tags:
+        - gender-lang-resource
+      operationId: getAllGenderLangs
+      parameters:
+        - name: page
+          in: query
+          description: Zero-based page index (0..N)
+          required: false
+          schema:
+            minimum: 0
+            type: integer
+            default: 0
+        - name: size
+          in: query
+          description: The size of the page to be returned
+          required: false
+          schema:
+            minimum: 1
+            type: integer
+            default: 20
+        - name: sort
+          in: query
+          description: 'Sorting criteria in the format: property,(asc|desc). Default sort order is ascending. Multiple sort criteria are supported.'
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+        - name: eagerload
+          in: query
+          required: false
+          schema:
+            type: boolean
+            default: false
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GenderLangDTO'
+    post:
+      tags:
+        - gender-lang-resource
+      operationId: createGenderLang
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GenderLangDTO'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/GenderLangDTO'
+  /api/forums:
+    get:
+      tags:
+        - forum-resource
+      operationId: getAllForums
+      parameters:
+        - name: page
+          in: query
+          description: Zero-based page index (0..N)
+          required: false
+          schema:
+            minimum: 0
+            type: integer
+            default: 0
+        - name: size
+          in: query
+          description: The size of the page to be returned
+          required: false
+          schema:
+            minimum: 1
+            type: integer
+            default: 20
+        - name: sort
+          in: query
+          description: 'Sorting criteria in the format: property,(asc|desc). Default sort order is ascending. Multiple sort criteria are supported.'
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/PostDTO'
+    post:
+      tags:
+        - forum-resource
+      operationId: createForum
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ForumDTO'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/PostDTO'
+  /api/forums/{id}/add-favorite:
+    post:
+      tags:
+        - forum-resource
+      operationId: addFavoriteForum
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/PostFavoriteDTO'
+  /api/country-langs:
+    get:
+      tags:
+        - country-lang-resource
+      operationId: getAllCountryLangs
+      parameters:
+        - name: page
+          in: query
+          description: Zero-based page index (0..N)
+          required: false
+          schema:
+            minimum: 0
+            type: integer
+            default: 0
+        - name: size
+          in: query
+          description: The size of the page to be returned
+          required: false
+          schema:
+            minimum: 1
+            type: integer
+            default: 20
+        - name: sort
+          in: query
+          description: 'Sorting criteria in the format: property,(asc|desc). Default sort order is ascending. Multiple sort criteria are supported.'
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+        - name: eagerload
+          in: query
+          required: false
+          schema:
+            type: boolean
+            default: false
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/CountryLangDTO'
+    post:
+      tags:
+        - country-lang-resource
+      operationId: createCountryLang
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CountryLangDTO'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/CountryLangDTO'
+  /api/countries:
+    get:
+      tags:
+        - country-resource
+      operationId: getAllCountries
+      parameters:
+        - name: page
+          in: query
+          description: Zero-based page index (0..N)
+          required: false
+          schema:
+            minimum: 0
+            type: integer
+            default: 0
+        - name: size
+          in: query
+          description: The size of the page to be returned
+          required: false
+          schema:
+            minimum: 1
+            type: integer
+            default: 20
+        - name: sort
+          in: query
+          description: 'Sorting criteria in the format: property,(asc|desc). Default sort order is ascending. Multiple sort criteria are supported.'
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/CountryDTO'
+    post:
+      tags:
+        - country-resource
+      operationId: createCountry
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CountryDTO'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/CountryDTO'
+  /api/contraction-counters:
+    post:
+      tags:
+        - contraction-counter-resource
+      operationId: createContractionCounter
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ContractionCounterDTO'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/ContractionCounterDTO'
+  /api/comments/{id}/posts/{postId}/{postType}/add-favorite:
+    post:
+      tags:
+        - comment-resource
+      operationId: addFavoriteComment
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+        - name: postId
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+        - name: postType
+          in: path
+          required: true
+          schema:
+            type: string
+            enum:
+              - BLOG
+              - FORUM
+              - COMMENT
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/PostFavoriteDTO'
+  /api/comments/posts/{postId}/{postType}:
+    post:
+      tags:
+        - comment-resource
+      operationId: createComment
+      parameters:
+        - name: postId
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+        - name: postType
+          in: path
+          required: true
+          schema:
+            type: string
+            enum:
+              - BLOG
+              - FORUM
+              - COMMENT
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CommentDTO'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/PostDTO'
+  /api/blogs/{id}/add-favorite:
+    post:
+      tags:
+        - blog-resource
+      operationId: addFavoriteBlog
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/PostFavoriteDTO'
+  /api/baby-names:
+    get:
+      tags:
+        - baby-name-resource
+      operationId: getAllBabyNames
+      parameters:
+        - name: page
+          in: query
+          description: Zero-based page index (0..N)
+          required: false
+          schema:
+            minimum: 0
+            type: integer
+            default: 0
+        - name: size
+          in: query
+          description: The size of the page to be returned
+          required: false
+          schema:
+            minimum: 1
+            type: integer
+            default: 20
+        - name: sort
+          in: query
+          description: 'Sorting criteria in the format: property,(asc|desc). Default sort order is ascending. Multiple sort criteria are supported.'
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+        - name: eagerload
+          in: query
+          required: false
+          schema:
+            type: boolean
+            default: false
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BabyNameDTO'
+    post:
+      tags:
+        - baby-name-resource
+      operationId: createBabyName
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BabyNameDTO'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/BabyNameDTO'
+  /api/baby-name-favorites/baby-names/{babyNameId}:
+    post:
+      tags:
+        - baby-name-favorite-resource
+      operationId: createBabyNameFavoriteByName
+      parameters:
+        - name: babyNameId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/BabyNameFavoriteDTO'
+    delete:
+      tags:
+        - baby-name-favorite-resource
+      operationId: deleteBabyNameFavoriteByName
+      parameters:
+        - name: babyNameId
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: OK
+  /api/authenticate:
+    get:
+      tags:
+        - account-resource
+      operationId: isAuthenticated
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: string
+    post:
+      tags:
+        - user-jwt-controller
+      operationId: authorize
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LoginVM'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/JWTToken'
+  /api/account:
+    get:
+      tags:
+        - account-resource
+      operationId: getAccount
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/AdminUserDTO'
+    post:
+      tags:
+        - account-resource
+      operationId: saveAccount
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AdminUserDTO'
+        required: true
+      responses:
+        '200':
+          description: OK
+  /api/account/reset-password/init:
+    post:
+      tags:
+        - account-resource
+      operationId: requestPasswordReset
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: string
+        required: true
+      responses:
+        '200':
+          description: OK
+  /api/account/reset-password/finish:
+    post:
+      tags:
+        - account-resource
+      operationId: finishPasswordReset
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/KeyAndPasswordVM'
+        required: true
+      responses:
+        '200':
+          description: OK
+  /api/account/change-password:
+    post:
+      tags:
+        - account-resource
+      operationId: changePassword
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PasswordChangeDTO'
+        required: true
+      responses:
+        '200':
+          description: OK
+  /api/users:
+    get:
+      tags:
+        - public-user-resource
+      operationId: getAllPublicUsers
+      parameters:
+        - name: page
+          in: query
+          description: Zero-based page index (0..N)
+          required: false
+          schema:
+            minimum: 0
+            type: integer
+            default: 0
+        - name: size
+          in: query
+          description: The size of the page to be returned
+          required: false
+          schema:
+            minimum: 1
+            type: integer
+            default: 20
+        - name: sort
+          in: query
+          description: 'Sorting criteria in the format: property,(asc|desc). Default sort order is ascending. Multiple sort criteria are supported.'
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/UserDTO'
+  /api/user-pregnancies/users/{userId}:
+    get:
+      tags:
+        - user-pregnancy-resource
+      operationId: getUserPregnancy
+      parameters:
+        - name: userId
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/UserPregnancyDTO'
+  /api/tags/name/{name}:
+    get:
+      tags:
+        - tag-resource
+      operationId: getAllTagsByName
+      parameters:
+        - name: name
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: page
+          in: query
+          description: Zero-based page index (0..N)
+          required: false
+          schema:
+            minimum: 0
+            type: integer
+            default: 0
+        - name: size
+          in: query
+          description: The size of the page to be returned
+          required: false
+          schema:
+            minimum: 1
+            type: integer
+            default: 20
+        - name: sort
+          in: query
+          description: 'Sorting criteria in the format: property,(asc|desc). Default sort order is ascending. Multiple sort criteria are supported.'
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/TagDTO'
+  /api/survey-questions/definitions/{definitionId}:
+    get:
+      tags:
+        - survey-question-resource
+      operationId: getAllSurveyQuestionsByDefinition
+      parameters:
+        - name: page
+          in: query
+          description: Zero-based page index (0..N)
+          required: false
+          schema:
+            minimum: 0
+            type: integer
+            default: 0
+        - name: size
+          in: query
+          description: The size of the page to be returned
+          required: false
+          schema:
+            minimum: 1
+            type: integer
+            default: 20
+        - name: sort
+          in: query
+          description: 'Sorting criteria in the format: property,(asc|desc). Default sort order is ascending. Multiple sort criteria are supported.'
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+        - name: eagerload
+          in: query
+          required: false
+          schema:
+            type: boolean
+            default: false
+        - name: definitionId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/SurveyQuestionDTO'
+  /api/survey-answers/questions/{questionId}:
+    get:
+      tags:
+        - survey-answer-resource
+      operationId: getAllSurveyAnswersByQuestion
+      parameters:
+        - name: page
+          in: query
+          description: Zero-based page index (0..N)
+          required: false
+          schema:
+            minimum: 0
+            type: integer
+            default: 0
+        - name: size
+          in: query
+          description: The size of the page to be returned
+          required: false
+          schema:
+            minimum: 1
+            type: integer
+            default: 20
+        - name: sort
+          in: query
+          description: 'Sorting criteria in the format: property,(asc|desc). Default sort order is ascending. Multiple sort criteria are supported.'
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+        - name: eagerload
+          in: query
+          required: false
+          schema:
+            type: boolean
+            default: false
+        - name: questionId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/SurveyAnswerDTO'
+  /api/sms-histories:
+    get:
+      tags:
+        - sms-history-resource
+      operationId: getAllSmsHistories
+      parameters:
+        - name: page
+          in: query
+          description: Zero-based page index (0..N)
+          required: false
+          schema:
+            minimum: 0
+            type: integer
+            default: 0
+        - name: size
+          in: query
+          description: The size of the page to be returned
+          required: false
+          schema:
+            minimum: 1
+            type: integer
+            default: 20
+        - name: sort
+          in: query
+          description: 'Sorting criteria in the format: property,(asc|desc). Default sort order is ascending. Multiple sort criteria are supported.'
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+        - name: eagerload
+          in: query
+          required: false
+          schema:
+            type: boolean
+            default: false
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/SmsHistoryDTO'
+  /api/shopping-lists/users/{userId}:
+    get:
+      tags:
+        - shopping-list-resource
+      operationId: getAllShoppingListsByUserId
+      parameters:
+        - name: page
+          in: query
+          description: Zero-based page index (0..N)
+          required: false
+          schema:
+            minimum: 0
+            type: integer
+            default: 0
+        - name: size
+          in: query
+          description: The size of the page to be returned
+          required: false
+          schema:
+            minimum: 1
+            type: integer
+            default: 20
+        - name: sort
+          in: query
+          description: 'Sorting criteria in the format: property,(asc|desc). Default sort order is ascending. Multiple sort criteria are supported.'
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+        - name: eagerload
+          in: query
+          required: false
+          schema:
+            type: boolean
+            default: false
+        - name: userId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ShoppingListDTO'
+  /api/shopping-definitions/type/{shoppingType}:
+    get:
+      tags:
+        - shopping-definition-resource
+      operationId: getAllShoppingDefinitionsByType
+      parameters:
+        - name: page
+          in: query
+          description: Zero-based page index (0..N)
+          required: false
+          schema:
+            minimum: 0
+            type: integer
+            default: 0
+        - name: size
+          in: query
+          description: The size of the page to be returned
+          required: false
+          schema:
+            minimum: 1
+            type: integer
+            default: 20
+        - name: sort
+          in: query
+          description: 'Sorting criteria in the format: property,(asc|desc). Default sort order is ascending. Multiple sort criteria are supported.'
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+        - name: eagerload
+          in: query
+          required: false
+          schema:
+            type: boolean
+            default: false
+        - name: shoppingType
+          in: path
+          required: true
+          schema:
+            type: string
+            enum:
+              - SHOPPING
+              - HOSPITAL_BAG
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ShoppingDefinitionDTO'
+  /api/public/users/sms/{phoneNumber}:
+    get:
+      tags:
+        - public-user-resource
+      operationId: sendSmsApi
+      parameters:
+        - name: phoneNumber
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+  /api/posts:
+    get:
+      tags:
+        - post-resource
+      operationId: getAllPosts
+      parameters:
+        - name: page
+          in: query
+          description: Zero-based page index (0..N)
+          required: false
+          schema:
+            minimum: 0
+            type: integer
+            default: 0
+        - name: size
+          in: query
+          description: The size of the page to be returned
+          required: false
+          schema:
+            minimum: 1
+            type: integer
+            default: 20
+        - name: sort
+          in: query
+          description: 'Sorting criteria in the format: property,(asc|desc). Default sort order is ascending. Multiple sort criteria are supported.'
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+        - name: eagerload
+          in: query
+          required: false
+          schema:
+            type: boolean
+            default: false
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/PostDTO'
+  /api/contraction-counters/users/{userId}:
+    get:
+      tags:
+        - contraction-counter-resource
+      operationId: getAllContractionCounters
+      parameters:
+        - name: page
+          in: query
+          description: Zero-based page index (0..N)
+          required: false
+          schema:
+            minimum: 0
+            type: integer
+            default: 0
+        - name: size
+          in: query
+          description: The size of the page to be returned
+          required: false
+          schema:
+            minimum: 1
+            type: integer
+            default: 20
+        - name: sort
+          in: query
+          description: 'Sorting criteria in the format: property,(asc|desc). Default sort order is ascending. Multiple sort criteria are supported.'
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+        - name: eagerload
+          in: query
+          required: false
+          schema:
+            type: boolean
+            default: false
+        - name: userId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ContractionCounterDTO'
+  /api/comments/{id}:
+    get:
+      tags:
+        - comment-resource
+      operationId: getComment
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/PostDTO'
+  /api/comments/posts/{postId}:
+    get:
+      tags:
+        - comment-resource
+      operationId: getAllCommentsByPostId
+      parameters:
+        - name: postId
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+        - name: page
+          in: query
+          description: Zero-based page index (0..N)
+          required: false
+          schema:
+            minimum: 0
+            type: integer
+            default: 0
+        - name: size
+          in: query
+          description: The size of the page to be returned
+          required: false
+          schema:
+            minimum: 1
+            type: integer
+            default: 20
+        - name: sort
+          in: query
+          description: 'Sorting criteria in the format: property,(asc|desc). Default sort order is ascending. Multiple sort criteria are supported.'
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/PostDTO'
+  /api/blogs:
+    get:
+      tags:
+        - blog-resource
+      operationId: getAllBlogs
+      parameters:
+        - name: page
+          in: query
+          description: Zero-based page index (0..N)
+          required: false
+          schema:
+            minimum: 0
+            type: integer
+            default: 0
+        - name: size
+          in: query
+          description: The size of the page to be returned
+          required: false
+          schema:
+            minimum: 1
+            type: integer
+            default: 20
+        - name: sort
+          in: query
+          description: 'Sorting criteria in the format: property,(asc|desc). Default sort order is ascending. Multiple sort criteria are supported.'
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/PostWP'
+  /api/blogs/{id}:
+    get:
+      tags:
+        - blog-resource
+      operationId: getBlog
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/PostWP'
+  /api/authorities:
+    get:
+      tags:
+        - public-user-resource
+      operationId: getAuthorities
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  type: string
+  /api/audits/entity/changes:
+    get:
+      tags:
+        - entity-audit-resource
+      operationId: getChanges
+      parameters:
+        - name: entityType
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: limit
+          in: query
+          required: true
+          schema:
+            type: integer
+            format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/EntityAuditEvent'
+  /api/audits/entity/changes/version/previous:
+    get:
+      tags:
+        - entity-audit-resource
+      operationId: getPrevVersion
+      parameters:
+        - name: qualifiedName
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: entityId
+          in: query
+          required: true
+          schema:
+            type: integer
+            format: int64
+        - name: commitVersion
+          in: query
+          required: true
+          schema:
+            type: integer
+            format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EntityAuditEvent'
+  /api/audits/entity/all:
+    get:
+      tags:
+        - entity-audit-resource
+      operationId: getAuditedEntities
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string
+  /api/admin/users/{login}:
+    get:
+      tags:
+        - user-resource
+      operationId: getUser
+      parameters:
+        - name: login
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/AdminUserDTO'
+    delete:
+      tags:
+        - user-resource
+      operationId: deleteUser
+      parameters:
+        - name: login
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+  /api/activate:
+    get:
+      tags:
+        - account-resource
+      operationId: activateAccount
+      parameters:
+        - name: key
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+  /api/forums/{id}/delete-favorite:
+    delete:
+      tags:
+        - forum-resource
+      operationId: deleteFavoriteFromForum
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: OK
+  /api/contraction-counters/{id}:
+    delete:
+      tags:
+        - contraction-counter-resource
+      operationId: deleteContractionCounter
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: OK
+  /api/comments/{id}/posts/{postId}/{postType}/delete-favorite:
+    delete:
+      tags:
+        - comment-resource
+      operationId: deleteFavoriteFromComment
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+        - name: postId
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+        - name: postType
+          in: path
+          required: true
+          schema:
+            type: string
+            enum:
+              - BLOG
+              - FORUM
+              - COMMENT
+      responses:
+        '200':
+          description: OK
+  /api/blogs/{id}/delete-favorite:
+    delete:
+      tags:
+        - blog-resource
+      operationId: deleteFavoriteFromBlog
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: OK
+components:
+  schemas:
+    ProfilePhotoDTO:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        name:
+          maxLength: 100
+          minLength: 0
+          type: string
+          description: Photo name, random value, like P001.png
+        url:
+          maxLength: 1000
+          minLength: 0
+          type: string
+          description: photo url information. annelikhikayesi.com profile01.png
+        active:
+          type: boolean
+          description: Active or passive information
+      description: Fixed profile photos url information
+    UserDTO:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        login:
+          type: string
+    UserEntityDTO:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        name:
+          maxLength: 250
+          minLength: 0
+          type: string
+          description: User fullname information, like Mehmet Cevheri BOZOGLAN
+        login:
+          maxLength: 250
+          minLength: 0
+          type: string
+          description: username information, like mehmet.cevheri
+        email:
+          maxLength: 320
+          minLength: 0
+          type: string
+          description: user email information, like cevheribozoglan@gmail.com
+        title:
+          maxLength: 500
+          minLength: 0
+          type: string
+          description: user title-position information, like Software Engineer
+        phoneNumber:
+          maxLength: 15
+          minLength: 0
+          type: string
+          description: user mobile phone number information, like 0095056368186
+        smsCode:
+          maxLength: 10
+          minLength: 0
+          type: string
+          description: last smscode information received by the logged-in user
+        integrationId:
+          maxLength: 10
+          minLength: 0
+          type: string
+          description: integrated application userId,
+        user:
+          $ref: '#/components/schemas/UserDTO'
+        photo:
+          $ref: '#/components/schemas/ProfilePhotoDTO'
+      description: User additional information, like title, phone, smscode etc..
+    UserPregnancyDTO:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        birthDate:
+          type: string
+          description: user birth date
+          format: date
+        pregnancyWeek:
+          maximum: 42
+          type: integer
+          description: user pregnancy week
+          format: int32
+        user:
+          $ref: '#/components/schemas/UserEntityDTO'
+      description: User Pregnancy detail information
+    SurveyDefinitionDTO:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        name:
+          maxLength: 1000
+          minLength: 0
+          type: string
+          description: Survey name information
+        active:
+          type: boolean
+          description: Active or passive information
+      description: Survey definitions.
+    SurveyQuestionDTO:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        name:
+          maxLength: 1000
+          minLength: 0
+          type: string
+          description: Question name information
+        active:
+          type: boolean
+          description: Active or passive information
+        survey:
+          $ref: '#/components/schemas/SurveyDefinitionDTO'
+      description: Survey Questions
+    SurveyAnswerDTO:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        answer:
+          type: boolean
+          description: Answer value. true or false
+        createdAt:
+          type: string
+          description: time to answer
+          format: date-time
+        question:
+          $ref: '#/components/schemas/SurveyQuestionDTO'
+        user:
+          $ref: '#/components/schemas/UserEntityDTO'
+      description: Survey Answers
+    ShoppingCategoryDTO:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        name:
+          maxLength: 100
+          minLength: 0
+          type: string
+          description: category name information
+        description:
+          maxLength: 1000
+          minLength: 0
+          type: string
+          description: category description
+        active:
+          type: boolean
+          description: Active or passive information
+        sources:
+          uniqueItems: true
+          type: array
+          items:
+            $ref: '#/components/schemas/ShoppingCategoryDTO'
+      description: Definition of Shopping list category names.
+    ShoppingDefinitionDTO:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        name:
+          maxLength: 100
+          minLength: 0
+          type: string
+          description: shopping list or hospital bag name information
+        description:
+          maxLength: 1000
+          minLength: 0
+          type: string
+          description: description of definition.
+        shoppingType:
+          type: string
+          description: type of Shopping
+          enum:
+            - SHOPPING
+            - HOSPITAL_BAG
+        active:
+          type: boolean
+          description: Active or passive information
+        category:
+          $ref: '#/components/schemas/ShoppingCategoryDTO'
+      description: Definition of shopping list.
+    ShoppingListDTO:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        todo:
+          type: boolean
+          description: if it is true, user want to buy this item.
+        todoDate:
+          type: string
+          description: time of todo list
+          format: date-time
+        finished:
+          type: boolean
+          description: if it is true, user bought this item.
+        finishedDate:
+          type: string
+          description: time of bought
+          format: date-time
+        shopping:
+          $ref: '#/components/schemas/ShoppingDefinitionDTO'
+        user:
+          $ref: '#/components/schemas/UserEntityDTO'
+      description: Shopping list of the user
+    PrivacyPolicyDTO:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        url:
+          maxLength: 1000
+          minLength: 0
+          type: string
+          description: PrivacyPolicy content url.
+        active:
+          type: boolean
+          description: Active or passive information
+      description: Privacy Policy definition
+    PostCategoryDTO:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        name:
+          maxLength: 100
+          minLength: 0
+          type: string
+          description: category name
+        description:
+          maxLength: 1000
+          minLength: 0
+          type: string
+          description: category description
+        active:
+          type: boolean
+          description: Active or passive information
+      description: Post categories, like BIRTH, PREGNANCY, I_WANT_BABY, IVF etc
+    PostDTO:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        postType:
+          type: string
+          description: post type, BLOG, FORUM, COMMENT
+          enum:
+            - BLOG
+            - FORUM
+            - COMMENT
+        title:
+          maxLength: 1000
+          minLength: 0
+          type: string
+          description: Post title information
+        createdAt:
+          type: string
+          description: time of posting
+          format: date-time
+        commentCount:
+          type: integer
+          description: count of posting
+          format: int32
+        favoriteCount:
+          type: integer
+          description: favorite of posting
+          format: int32
+        active:
+          type: boolean
+          description: Active or passive information
+        parent:
+          $ref: '#/components/schemas/PostDTO'
+        writer:
+          $ref: '#/components/schemas/UserEntityDTO'
+        categories:
+          uniqueItems: true
+          type: array
+          items:
+            $ref: '#/components/schemas/PostCategoryDTO'
+        tags:
+          uniqueItems: true
+          type: array
+          items:
+            $ref: '#/components/schemas/TagDTO'
+      description: Post information, Blog, Forum, Comment, Question, Replay etc. Most important object.
+    PostFavoriteDTO:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        createdAt:
+          type: string
+          description: time of favorited
+          format: date-time
+        post:
+          $ref: '#/components/schemas/PostDTO'
+        user:
+          $ref: '#/components/schemas/UserEntityDTO'
+      description: Posts favorited by logged-in users
+    TagDTO:
+      required:
+        - name
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        name:
+          maxLength: 100
+          minLength: 0
+          type: string
+          description: tag name
+      description: Tag of the posts, like a label
+    PostContentDTO:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        content:
+          type: string
+          description: Post Content, it can be large. it can be html input or normal text.
+        imageUrl:
+          maxLength: 1000
+          minLength: 0
+          type: string
+          description: content image url.
+        post:
+          $ref: '#/components/schemas/PostDTO'
+      description: Post Content, it can be large. it can be html input or normal text.
+    LanguageDTO:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        name:
+          maxLength: 100
+          minLength: 0
+          type: string
+          description: language name but original name, like English, Turkce etc..
+        code:
+          maxLength: 2
+          minLength: 0
+          type: string
+          description: language iso-codes, en, tr etc..
+        active:
+          type: boolean
+          description: Active or passive information
+        defaultLang:
+          type: boolean
+          description: default application language
+      description: Language definitons
+    KvkkDTO:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        url:
+          maxLength: 1000
+          minLength: 0
+          type: string
+          description: kvkk content url information
+        active:
+          type: boolean
+          description: Active or passive information
+      description: Kvkk content definiton
+    GenderDTO:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        name:
+          maxLength: 100
+          minLength: 0
+          type: string
+          description: gender name
+        active:
+          type: boolean
+          description: Active or passive information
+      description: definition of gender
+    ForumDTO:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        postType:
+          type: string
+          description: post type, BLOG, FORUM, COMMENT
+          enum:
+            - BLOG
+            - FORUM
+            - COMMENT
+        title:
+          maxLength: 1000
+          minLength: 0
+          type: string
+          description: Post title information
+        createdAt:
+          type: string
+          description: time of posting
+          format: date-time
+        commentCount:
+          type: integer
+          description: count of posting
+          format: int32
+        favoriteCount:
+          type: integer
+          description: favorite of posting
+          format: int32
+        active:
+          type: boolean
+          description: Active or passive information
+        parent:
+          $ref: '#/components/schemas/PostDTO'
+        writer:
+          $ref: '#/components/schemas/UserEntityDTO'
+        categories:
+          uniqueItems: true
+          type: array
+          items:
+            $ref: '#/components/schemas/PostCategoryDTO'
+        tags:
+          uniqueItems: true
+          type: array
+          items:
+            $ref: '#/components/schemas/TagDTO'
+    CountryDTO:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        name:
+          maxLength: 250
+          minLength: 0
+          type: string
+          description: country name
+        code:
+          maxLength: 2
+          minLength: 0
+          type: string
+          description: global country code
+        active:
+          type: boolean
+          description: Active or passive information
+      description: definition of countries.
+    CommentDTO:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        postType:
+          type: string
+          description: post type, BLOG, FORUM, COMMENT
+          enum:
+            - BLOG
+            - FORUM
+            - COMMENT
+        title:
+          maxLength: 1000
+          minLength: 0
+          type: string
+          description: Post title information
+        createdAt:
+          type: string
+          description: time of posting
+          format: date-time
+        commentCount:
+          type: integer
+          description: count of posting
+          format: int32
+        favoriteCount:
+          type: integer
+          description: favorite of posting
+          format: int32
+        active:
+          type: boolean
+          description: Active or passive information
+        parent:
+          $ref: '#/components/schemas/PostDTO'
+        writer:
+          $ref: '#/components/schemas/UserEntityDTO'
+        categories:
+          uniqueItems: true
+          type: array
+          items:
+            $ref: '#/components/schemas/PostCategoryDTO'
+        tags:
+          uniqueItems: true
+          type: array
+          items:
+            $ref: '#/components/schemas/TagDTO'
+    BabyNameDTO:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        name:
+          maxLength: 100
+          minLength: 0
+          type: string
+          description: baby name
+        personal:
+          type: boolean
+          description: this name is private. Other users can not show it.
+        active:
+          type: boolean
+          description: Active or passive information
+        gender:
+          $ref: '#/components/schemas/GenderDTO'
+        country:
+          $ref: '#/components/schemas/CountryDTO'
+        user:
+          $ref: '#/components/schemas/UserEntityDTO'
+      description: Definition of the baby names. User or admin can create it.
+    AdminUserDTO:
+      required:
+        - login
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        login:
+          maxLength: 50
+          minLength: 1
+          type: string
+        firstName:
+          maxLength: 50
+          minLength: 0
+          type: string
+        lastName:
+          maxLength: 50
+          minLength: 0
+          type: string
+        email:
+          maxLength: 254
+          minLength: 5
+          type: string
+        imageUrl:
+          maxLength: 256
+          minLength: 0
+          type: string
+        activated:
+          type: boolean
+        langKey:
+          maxLength: 10
+          minLength: 2
+          type: string
+        createdBy:
+          type: string
+        createdDate:
+          type: string
+          format: date-time
+        lastModifiedBy:
+          type: string
+        lastModifiedDate:
+          type: string
+          format: date-time
+        authorities:
+          uniqueItems: true
+          type: array
+          items:
+            type: string
+    UserPrivacyPolicyApproveDTO:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        approveDate:
+          type: string
+          description: User Privacy Policy Approved Date
+          format: date
+        privacyPolicy:
+          $ref: '#/components/schemas/PrivacyPolicyDTO'
+        user:
+          $ref: '#/components/schemas/UserEntityDTO'
+      description: When user approve the PrivacyPolicy then saved.
+    UserPregnancyTaskHistoryDTO:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        createdAt:
+          type: string
+          description: task created date
+          format: date-time
+        pregnancyWeek:
+          maximum: 42
+          type: integer
+          description: pregnancy week info that logged-in user
+          format: int32
+        notificationSend:
+          type: boolean
+          description: when notification was sent then it will be true
+        notificationSendDate:
+          type: string
+          description: notification send time
+          format: date-time
+        notificationRead:
+          type: boolean
+          description: when notification is read by the related user, it will be true
+        notificationReadDate:
+          type: string
+          description: notification read time
+          format: date-time
+        userPregnancy:
+          $ref: '#/components/schemas/UserPregnancyDTO'
+      description: User pregnancy task history for all notification
+    UserKvkkApproveDTO:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        approveDate:
+          type: string
+          description: user Approved Date
+          format: date
+        kvkk:
+          $ref: '#/components/schemas/KvkkDTO'
+        user:
+          $ref: '#/components/schemas/UserEntityDTO'
+      description: When user approve the KVKK then it save this.
+    ManagedUserVM:
+      required:
+        - login
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        login:
+          maxLength: 50
+          minLength: 1
+          type: string
+        firstName:
+          maxLength: 50
+          minLength: 0
+          type: string
+        lastName:
+          maxLength: 50
+          minLength: 0
+          type: string
+        email:
+          maxLength: 254
+          minLength: 5
+          type: string
+        imageUrl:
+          maxLength: 256
+          minLength: 0
+          type: string
+        activated:
+          type: boolean
+        langKey:
+          maxLength: 10
+          minLength: 2
+          type: string
+        createdBy:
+          type: string
+        createdDate:
+          type: string
+          format: date-time
+        lastModifiedBy:
+          type: string
+        lastModifiedDate:
+          type: string
+          format: date-time
+        authorities:
+          uniqueItems: true
+          type: array
+          items:
+            type: string
+        password:
+          maxLength: 100
+          minLength: 4
+          type: string
+    GenderLangDTO:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        name:
+          maxLength: 100
+          minLength: 0
+          type: string
+          description: translated gender name
+        description:
+          maxLength: 1000
+          minLength: 0
+          type: string
+          description: translated gender description
+        owner:
+          $ref: '#/components/schemas/GenderDTO'
+        language:
+          $ref: '#/components/schemas/LanguageDTO'
+      description: translation of gender name
+    CountryLangDTO:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        name:
+          maxLength: 250
+          minLength: 0
+          type: string
+          description: Translated country names
+        owner:
+          $ref: '#/components/schemas/CountryDTO'
+        language:
+          $ref: '#/components/schemas/LanguageDTO'
+      description: translation of countries.
+    ContractionCounterDTO:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        startTime:
+          type: string
+          description: time of starting
+          format: date-time
+        endTime:
+          type: string
+          description: time of ending
+          format: date-time
+        frequency:
+          type: object
+          properties:
+            seconds:
+              type: integer
+              format: int64
+            nano:
+              type: integer
+              format: int32
+            units:
+              type: array
+              items:
+                type: object
+                properties:
+                  dateBased:
+                    type: boolean
+                  timeBased:
+                    type: boolean
+                  duration:
+                    type: object
+                    properties:
+                      seconds:
+                        type: integer
+                        format: int64
+                      nano:
+                        type: integer
+                        format: int32
+                      zero:
+                        type: boolean
+                      negative:
+                        type: boolean
+                  durationEstimated:
+                    type: boolean
+            zero:
+              type: boolean
+            negative:
+              type: boolean
+          description: Between previousStartTime - currentStartTime
+        duration:
+          type: object
+          properties:
+            seconds:
+              type: integer
+              format: int64
+            nano:
+              type: integer
+              format: int32
+            units:
+              type: array
+              items:
+                type: object
+                properties:
+                  dateBased:
+                    type: boolean
+                  timeBased:
+                    type: boolean
+                  duration:
+                    type: object
+                    properties:
+                      seconds:
+                        type: integer
+                        format: int64
+                      nano:
+                        type: integer
+                        format: int32
+                      zero:
+                        type: boolean
+                      negative:
+                        type: boolean
+                  durationEstimated:
+                    type: boolean
+            zero:
+              type: boolean
+            negative:
+              type: boolean
+          description: Between endTime - startTime
+        user:
+          $ref: '#/components/schemas/UserEntityDTO'
+      description: Contraction counter of the user.
+    BabyNameFavoriteDTO:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        createdAt:
+          type: string
+          description: time of creating
+          format: date-time
+        baby:
+          $ref: '#/components/schemas/BabyNameDTO'
+        user:
+          $ref: '#/components/schemas/UserEntityDTO'
+      description: Favorited Baby names by the logged-in user
+    LoginVM:
+      required:
+        - password
+        - username
+      type: object
+      properties:
+        username:
+          maxLength: 50
+          minLength: 1
+          type: string
+        password:
+          maxLength: 100
+          minLength: 4
+          type: string
+        rememberMe:
+          type: boolean
+    JWTToken:
+      type: object
+      properties:
+        id_token:
+          type: string
+    User:
+      required:
+        - activated
+        - login
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        login:
+          maxLength: 50
+          minLength: 1
+          type: string
+        firstName:
+          maxLength: 50
+          minLength: 0
+          type: string
+        lastName:
+          maxLength: 50
+          minLength: 0
+          type: string
+        email:
+          maxLength: 254
+          minLength: 5
+          type: string
+        activated:
+          type: boolean
+        langKey:
+          maxLength: 10
+          minLength: 2
+          type: string
+        imageUrl:
+          maxLength: 256
+          minLength: 0
+          type: string
+        resetDate:
+          type: string
+          format: date-time
+        smsCode:
+          type: string
+    KeyAndPasswordVM:
+      type: object
+      properties:
+        key:
+          type: string
+        newPassword:
+          type: string
+    PasswordChangeDTO:
+      type: object
+      properties:
+        currentPassword:
+          type: string
+        newPassword:
+          type: string
+    SmsHistoryDTO:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        sendingDate:
+          type: string
+          description: When the sms was sent.
+          format: date-time
+        smsCode:
+          maxLength: 10
+          minLength: 0
+          type: string
+          description: sms-code information
+        phoneNumber:
+          type: string
+      description: Sms-code history received by logged-in users.
+    About:
+      type: object
+      properties:
+        href:
+          type: string
+    Author:
+      type: object
+      properties:
+        embeddable:
+          type: boolean
+        href:
+          type: string
+    Collection:
+      type: object
+      properties:
+        href:
+          type: string
+    Content:
+      type: object
+      properties:
+        rendered:
+          type: string
+        protected:
+          type: boolean
+    Cury:
+      type: object
+      properties:
+        name:
+          type: string
+        href:
+          type: string
+        templated:
+          type: boolean
+    Excerpt:
+      type: object
+      properties:
+        rendered:
+          type: string
+        protected:
+          type: boolean
+    Guid:
+      type: object
+      properties:
+        rendered:
+          type: string
+    Links:
+      type: object
+      properties:
+        self:
+          type: array
+          items:
+            $ref: '#/components/schemas/Self'
+        collection:
+          type: array
+          items:
+            $ref: '#/components/schemas/Collection'
+        about:
+          type: array
+          items:
+            $ref: '#/components/schemas/About'
+        author:
+          type: array
+          items:
+            $ref: '#/components/schemas/Author'
+        replies:
+          type: array
+          items:
+            $ref: '#/components/schemas/Reply'
+        version-history:
+          type: array
+          items:
+            $ref: '#/components/schemas/VersionHistory'
+        wp:featuredmedia:
+          type: array
+          items:
+            $ref: '#/components/schemas/WpFeaturedmedium'
+        wp:attachment:
+          type: array
+          items:
+            $ref: '#/components/schemas/WpAttachment'
+        wp:term:
+          type: array
+          items:
+            $ref: '#/components/schemas/WpTerm'
+        curies:
+          type: array
+          items:
+            $ref: '#/components/schemas/Cury'
+    PostWP:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        date:
+          type: string
+        date_gmt:
+          type: string
+        guid:
+          $ref: '#/components/schemas/Guid'
+        modified:
+          type: string
+        modified_gmt:
+          type: string
+        slug:
+          type: string
+        status:
+          type: string
+        type:
+          type: string
+        link:
+          type: string
+        title:
+          $ref: '#/components/schemas/Title'
+        content:
+          $ref: '#/components/schemas/Content'
+        excerpt:
+          $ref: '#/components/schemas/Excerpt'
+        author:
+          type: integer
+          format: int32
+        featured_media:
+          type: integer
+          format: int32
+        comment_status:
+          type: string
+        ping_status:
+          type: string
+        sticky:
+          type: boolean
+        template:
+          type: string
+        format:
+          type: string
+        meta:
+          type: array
+          items:
+            type: object
+        categories:
+          type: array
+          items:
+            type: integer
+            format: int32
+        tags:
+          type: array
+          items:
+            type: object
+        _links:
+          $ref: '#/components/schemas/Links'
+    Reply:
+      type: object
+      properties:
+        embeddable:
+          type: boolean
+        href:
+          type: string
+    Self:
+      type: object
+      properties:
+        href:
+          type: string
+    Title:
+      type: object
+      properties:
+        rendered:
+          type: string
+    VersionHistory:
+      type: object
+      properties:
+        count:
+          type: integer
+          format: int32
+        href:
+          type: string
+    WpAttachment:
+      type: object
+      properties:
+        href:
+          type: string
+    WpFeaturedmedium:
+      type: object
+      properties:
+        embeddable:
+          type: boolean
+        href:
+          type: string
+    WpTerm:
+      type: object
+      properties:
+        taxonomy:
+          type: string
+        embeddable:
+          type: boolean
+        href:
+          type: string
+    EntityAuditEvent:
+      required:
+        - action
+        - entityId
+        - entityType
+        - modifiedDate
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        entityId:
+          type: integer
+          format: int64
+        entityType:
+          maxLength: 255
+          minLength: 0
+          type: string
+        action:
+          maxLength: 20
+          minLength: 0
+          type: string
+        entityValue:
+          type: string
+        commitVersion:
+          type: integer
+          format: int32
+        modifiedBy:
+          maxLength: 100
+          minLength: 0
+          type: string
+        modifiedDate:
+          type: string
+          format: date-time

@@ -3958,7 +3958,7 @@ components:
           maxLength: 1000
           minLength: 0
           type: string
-          description: photo url information. annelikhikayesi.com profile01.png
+          description: photo url information profile01.png
         active:
           type: boolean
           description: Active or passive information
